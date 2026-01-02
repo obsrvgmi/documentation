@@ -4,64 +4,62 @@ description: 'Complete list of commands for the Decibel Telegram Bot.'
 icon: 'terminal'
 ---
 
-<Warning> 
-
+<Warning>
+  
   Decibel is currently live on the Aptos Testnet. You do not need real funds to trade.
   
   **`/mint`**
-Get started instantly by minting **$10,000 in Testnet USDC** directly to your trading wallet. Use this balance to test strategies risk-free.
+  Get started instantly by minting **$10,000 in Testnet USDC** directly to your trading wallet. Use this balance to test strategies risk-free.
 </Warning>
 
 ## Market Intelligence
-Tools to analyze price action and track specific assets.
+Tools to analyze price action and track specific assets before you trade.
 
 | Command | Description |
 | :--- | :--- |
-| **/markets** | Displays a dashboard of all listed trading pairs with live prices and 24h change %. Click on any ticker to quickly pull up its chart or trade menu. |
-| **/chart** `[token]` | Generates a real-time candlestick chart for the requested asset inside Telegram. Includes basic indicators and timeframe toggles (15m, 1H, 4H). |
-| **/watchlist** | Shows your personal list of favorite **Token Pairs** (e.g., APT-USD, ETH-USD). Use this to keep a close eye on the assets you trade most frequently. |
-| **/alert** `[token]` | Sets a custom price alert for a specific token. The bot will send you a DM immediately when the price hits your target, ensuring you never miss an entry. |
+| **/markets** | Displays a dashboard of all listed trading pairs on Decibel (e.g., APT-USD, BTC-USD). Shows live prices, 24h volume, and daily percentage changes. |
+| **/chart** `[token]` | Generates a real-time candlestick chart for the requested asset inside Telegram. Toggle timeframes (15m, 1H, 4H) to analyze trends without leaving the chat. |
+| **/watchlist** | Displays your saved list of favorite **Token Pairs**. Use this to filter out noise and only view prices for the assets you actively trade. |
+| **/alert** `[token]` | Sets a custom price alert. The bot will DM you immediately when the token hits your target price, ensuring you never miss a breakout or entry. |
 
-## Trading Management
-Core commands for executing, managing, and closing positions.
+## Trading Execution
+Core commands for executing, managing, and closing your positions.
 
 | Command | Description |
 | :--- | :--- |
 | **/limit** `[token]` | Opens the Limit Order interface. Allows you to set precise entry prices to buy (Long) or sell (Short) only when the market reaches your specific level. |
 | **/positions** | Fetches a summary of all your currently active positions. View your entry price, liquidation price, and real-time PnL (ROI%) for every open trade. |
-| **/close** | The quick-exit tool. typing `/close` brings up a menu of open positions to close individually, or options to close **All Longs**, **All Shorts**, or **Everything** at market price. |
+| **/close** | The quick-exit tool. typing `/close` brings up a menu to close specific positions, or options to close **All Longs**, **All Shorts**, or **Everything** at market price. |
 | **/orders** | Manages your "Open Book." View all pending limit orders or triggered stop orders. You can cancel specific orders or wipe the entire book with one click. |
-| **/tp** `[token]` | Adds or edits a **Take Profit** trigger on an open position. You can set this by price target (e.g., $2500) or by percentage gain (e.g., +50% ROI). |
-| **/sl** `[token]` | Adds or edits a **Stop Loss** trigger. Essential for risk management, this automatically closes your trade if the price moves against you to prevent liquidation. |
 
-## Social & PVP Layer
-Features for tracking other traders, joining teams, and social interaction.
+## Risk Management
+Protect your capital and automate your exits.
 
 | Command | Description |
 | :--- | :--- |
-| **/track** `[wallet]` | Adds a specific trader's wallet address to your "Stalking" list. You will receive notifications whenever this wallet opens or closes a trade. |
+| **/tp** `[token]` | Adds or edits a **Take Profit** trigger on an open position. You can set this by price target (e.g., $2500) or by percentage gain (e.g., +50% ROI). |
+| **/sl** `[token]` | Adds or edits a **Stop Loss** trigger. Essential for risk management, this automatically closes your trade if the price moves against you to prevent liquidation. |
+
+## Social & PVP
+Features for tracking other traders, joining teams, and competitive interaction.
+
+| Command | Description |
+| :--- | :--- |
+| **/track** `[wallet]` | Adds a specific trader's wallet address to your personal tracking list. You will receive notifications whenever this wallet opens or closes a trade. |
 | **/untrack** `[wallet]` | Removes a wallet from your tracking list. Stops the bot from sending you notifications regarding that specific user's activity. |
 | **/guild** | Opens the Guild interface. Create your own trading team, join an existing guild, or view the leaderboard to see which guilds are dominating the PnL rankings. |
-| **/taunt** `[user/wallet]`| Sends a playful or competitive message to another user. Often used after you win a trade against someone or spot them getting liquidated. |
+| **/taunt** `[user]` | Sends a playful or competitive message to another user in the chat. Best used after you win a trade against them or see them get liquidated. |
 
-## Advanced Strategies
-<Note>
-  Copy Trading and Counter Trading are powerful automated features. We have dedicated detailed guides for these features below.
-</Note>
-
-<CardGroup cols={2}>
-  <Card title="Copy Trade" icon="clone" href="/features/copy-trade">
-    **/copytrade** <br/>
-    Automatically mirror the trades of a winning wallet.
-  </Card>
-  <Card title="Counter Trade" icon="arrow-right-arrow-left" href="/features/counter-trade">
-    **/countertrade** <br/>
-    Automatically trade the *exact opposite* of a losing wallet.
-  </Card>
-</CardGroup>
-
-## System Configuration
+## System & Settings
 
 | Command | Description |
 | :--- | :--- |
 | **/settings** | Access the global bot configuration. Adjust your default leverage, gas fee preset (Standard/Turbo), and toggle "One-Click Trading" for faster execution. |
+
+## Automated Strategy Commands
+*These commands enable advanced automated trading strategies. Please refer to their specific documentation pages for detailed setup instructions.*
+
+| Command | Description |
+| :--- | :--- |
+| **/copytrade** `[wallet]` | **Follow the Winners.** Automatically mirrors the trades of a specific wallet. You can configure fixed copy amounts or proportional sizing. |
+| **/countertrade** `[wallet]` | **Fade the Losers.** The inverse of copy trading. Automatically opens the *exact opposite* position of the target wallet (e.g., they Long, you Short). |
