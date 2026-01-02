@@ -1,42 +1,76 @@
 ---
-title: "Bot Commands"
-description: "A complete reference guide for interacting with the Samosa Telegram Trading Bot."
-icon: "robot"
+title: 'Bot Commands'
+description: 'Reference guide for Decibel on Aptos Testnet.'
+icon: 'terminal'
 ---
 
-Our Telegram bot uses slash commands to manage trades, settings, and social features. Below is a comprehensive list of all available commands.
+<Warning>
+  **Testnet Alpha:** Decibel is currently live on the **Aptos Testnet**. 
+  
+  Before trading, you must fund your wallet. Use the command below to receive free testnet funds:
+  
+  **`/mint`** — Mints **$10,000 testnet USDC** to your connected wallet instantly so you can start testing strategies risk-free.
+</Warning>
 
-<Note>
-  **Note:** Decibel is currently on Aptos testnet. To begin trading, please mint testnet USDC using the /mint command to receive $10,000.
-</Note>
+## Market Data & Charts
+Analyze the market before taking a position.
 
-<Note>
-  **Note:** All commands must start with a forward slash (`/`). You can also type `/` in the chat input to see a visual menu of these commands.
-</Note>
+| Command | Description |
+| :--- | :--- |
+| **/markets** | Displays a snapshot of all available trading pairs on Decibel, including current prices, 24h volume, and daily percentage changes. |
+| **/chart** `[token]` | Generates a real-time candlestick chart for the specified token. You can toggle between timeframes (15m, 1h, 4h, 1d) directly within the chat. |
+| **/alert** `[token]` | Sets a price alert. The bot will DM you immediately when the specified token hits your target price, so you never miss a move. |
 
-## Core Trading
+## Trading Execution
+Commands for executing market, limit, and unique PVP strategy orders.
 
-Essential commands for opening, managing, and closing your perpetual futures positions.
+| Command | Description |
+| :--- | :--- |
+| **/long** / **/short** | Opens a market order. If no token is specified, it opens the "Quick Trade" menu. Reply to any token ticker with these commands for instant execution. |
+| **/limit** `[token]` | Opens the Limit Order interface. Set specific entry prices to buy or sell only when the market hits your desired level. |
+| **/copytrade** `[wallet]` | Auto-copy a target wallet. You can set a fixed amount per trade or mirror their leverage. When they win, you win. |
+| **/countertrade** `[wallet]`| **(PVP Exclusive)** The inverse of copy trading. Automatically opens the *opposite* position of the target wallet. Use this if you think a specific trader is always wrong. |
+| **/positions** | Views all active open positions. Includes live PnL, liquidation prices, and "Close Position" buttons. |
+| **/close** | Closes positions. Use `/close all` to exit everything immediately, or `/close [token]` for specific assets. |
+| **/orders** | Manages pending limit or trigger orders. View your open book and cancel orders individually or in bulk. |
 
-| Command              | Description                                                                                                                                     |
-| :------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **/start**           | Initializes the bot and opens the main dashboard. Displays your connected wallet summary, open positions, and quick-access buttons for trading. |
-| **/long** `[token]`  | Opens a long position on the specified token (e.g., `/long ETH`). If no token is provided, it opens the asset selection menu.                   |
-| **/short** `[token]` | Opens a short position on the specified token (e.g., `/short SOL`). If no token is provided, it opens the asset selection menu.                 |
-| **/positions**       | Fetches all currently active positions. Shows real-time PnL, entry price, liquidation price, and provides options to close or edit trades.      |
-| **/close** `[token]` | Closes an active position immediately at market price. If no token is specified, it provides a list of positions to choose from.                |
-| **/orders**          | Lists all open limit and trigger orders. Allows you to cancel individual pending orders or cancel all with a single click.                      |
+## Risk Management
+Protect your capital and automate exits.
 
-<Tip>
-  **Pro Tip:** You can reply to any token ticker posted in a group chat with `/long` or `/short` to instantly queue a trade for that asset.
-</Tip>
+| Command | Description |
+| :--- | :--- |
+| **/tp** `[token]` | Sets **Take Profit** triggers. Configure partial take profits (e.g., "Sell 50% of position at $2000") to lock in gains while letting the rest ride. |
+| **/sl** `[token]` | Sets **Stop Loss** triggers. Protects against liquidation by automatically closing your position if the price moves against you by a set percentage. |
 
-## Risk & Management
+## PVP, Social & Guilds
+The social layer of Decibel. Track whales, taunt losers, and build your team.
 
-Control your leverage, margin modes, and automated trade protections.
+<CardGroup cols={2}>
+  <Card title="Tracking" icon="eye">
+    **/track [wallet]** <br/>
+    Add a wallet to your personal watchlist. Get notified instantly when they trade.
+  </Card>
+  <Card title="Watchlist" icon="list">
+    **/watchlist** <br/>
+    View all the traders you are currently tracking. Manage your list and see their recent performance stats.
+  </Card>
+  <Card title="Untrack" icon="eye-slash">
+    **/untrack [wallet]** <br/>
+    Stop receiving notifications for a specific wallet. Cleans up your alerts stream.
+  </Card>
+  <Card title="Taunt" icon="face-acous-dizzy">
+    **/taunt [wallet]** <br/>
+    Sends a "Taunt" notification to a user you just outperformed or liquidated (if they are in the same Telegram group).
+  </Card>
+  <Card title="Guilds" icon="shield-halved">
+    **/guild** <br/>
+    Create or join a trading Guild. Pools PnL for team leaderboards and unlocks multiplier rewards for group performance.
+  </Card>
+</CardGroup>
 
-| Command           | Description                                                                                                                              |
-| :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| **/leverage**     | Adjusts the leverage slider (e.g., 5x, 20x, 50x). Configure global default leverage or set specific leverage for individual asset pairs. |
-| **/sl** `[token]` | Sets or modifies the **Stop Loss**. Input a specific price target or a percentage drop (e.g., -10%) to automatically trigger the exit.   |
-| **/tp** `[token]` | Sets or modifies the **Take Profit**. Define a price                                                                                     |
+## System & Settings
+
+| Command | Description |
+| :--- | :--- |
+| **/wallet** | Checks your Aptos wallet balance and connects/disconnects your address. Shows available collateral for trading. |
+| **/settings** | Configures global bot preferences: Default leverage, slippage tolerance, notification settings, and "One-Click Trade" mode. |
