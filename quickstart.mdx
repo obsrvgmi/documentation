@@ -1,80 +1,38 @@
 ---
-title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+title: "Bot Commands"
+description: "A complete reference guide for interacting with the Samosa Telegram Trading Bot."
+icon: "terminal"
 ---
 
-## Get started in three steps
-
-Get your documentation site running locally and make your first customization.
-
-### Step 1: Set up your local environment
-
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-    
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-    
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 2: Deploy your changes
-
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
-
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 3: Go live
-
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
-
-## Next steps
-
-Now that you have your docs running, explore these key features:
-
-<CardGroup cols={2}>
-
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
-
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
-
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
-
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
-
-</CardGroup>
+Our Telegram bot uses slash commands to manage trades, settings, and social features. Below is a comprehensive list of all available commands.
 
 <Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
+  **Note:** All commands must start with a forward slash (`/`). You can also type `/` in the chat input to see a visual menu of these commands.
 </Note>
+
+## Core Trading
+
+Essential commands for opening, managing, and closing your perpetual futures positions.
+
+| Command              | Description                                                                                                                                     |
+| :------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **/start**           | Initializes the bot and opens the main dashboard. Displays your connected wallet summary, open positions, and quick-access buttons for trading. |
+| **/long** `[token]`  | Opens a long position on the specified token (e.g., `/long ETH`). If no token is provided, it opens the asset selection menu.                   |
+| **/short** `[token]` | Opens a short position on the specified token (e.g., `/short SOL`). If no token is provided, it opens the asset selection menu.                 |
+| **/positions**       | Fetches all currently active positions. Shows real-time PnL, entry price, liquidation price, and provides options to close or edit trades.      |
+| **/close** `[token]` | Closes an active position immediately at market price. If no token is specified, it provides a list of positions to choose from.                |
+| **/orders**          | Lists all open limit and trigger orders. Allows you to cancel individual pending orders or cancel all with a single click.                      |
+
+<Tip>
+  **Pro Tip:** You can reply to any token ticker posted in a group chat with `/long` or `/short` to instantly queue a trade for that asset.
+</Tip>
+
+## Risk & Management
+
+Control your leverage, margin modes, and automated trade protections.
+
+| Command           | Description                                                                                                                              |
+| :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| **/leverage**     | Adjusts the leverage slider (e.g., 5x, 20x, 50x). Configure global default leverage or set specific leverage for individual asset pairs. |
+| **/sl** `[token]` | Sets or modifies the **Stop Loss**. Input a specific price target or a percentage drop (e.g., -10%) to automatically trigger the exit.   |
+| **/tp** `[token]` | Sets or modifies the **Take Profit**. Define a price                                                                                     |
