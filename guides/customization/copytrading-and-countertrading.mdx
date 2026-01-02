@@ -1,31 +1,40 @@
 ---
 title: 'Copy & Counter Trading'
-description: 'Copytrade or COuntertrade your friends easily on Samosa'
-icon : 'copy'
+description: 'Copy and Counter Trade Your Friends, Easily.'
+---
+
+## How It Works
+
+1.  **Isolation:** When you start copying someone, the bot creates a unique sub-wallet dedicated to that specific trader.
+2.  **Deposit:** You must deposit funds into this new sub-wallet to begin.
+3.  **Proportional Sizing:** The bot trades based on percentage, not fixed amounts. If the trader uses **10%** of their portfolio for a trade, the bot will use **10%** of your sub-wallet's balance to match it.
+
 ---
 
 ## Commands
 
 ### `/copy`
-Mirror the moves of a winning trader.
-When you use this command with a wallet address, the bot will automatically open the exact same trades as that user—buying when they buy and selling when they sell.
-* **Usage:** `/copy [Wallet Address] [Amount]`
-* **Best for:** Following "Whales" or top-ranked leaderboard players.
+Mirror the moves of a winning trader. Use this command to start a new copy-trade or manage existing ones.
+
+**How to Start:**
+1.  Type `/copy`.
+2.  The bot will ask for the **Wallet Address** you want to copy.
+3.  The bot generates a new **Sub-Wallet** for this connection.
+4.  Deposit funds into this sub-wallet to activate the copy.
+
+**How to Manage:**
+* Type `/copy` again to see a list of all traders you are currently copying.
+* From this menu, you can check your profits, withdraw funds, or click **Stop Copying** to end the automation.
 
 ### `/counter`
-Bet against a specific trader.
-If the target trader opens a Long position, your bot will automatically open a Short. If they Short, you Long. This is a powerful tool if you identify a trader who is consistently wrong.
-* **Usage:** `/counter [Wallet Address] [Amount]`
-* **Best for:** Profiting from "inverse" signals or betting against rivals.
+Bet against a specific trader. If they open a Long, you automatically open a Short.
 
----
+**How to Start:**
+1.  Type `/counter`.
+2.  The bot will ask for the **Wallet Address** you want to trade against.
+3.  The bot generates a new **Sub-Wallet** for this connection.
+4.  Deposit funds into this sub-wallet to activate the counter-trade.
 
-## Managing Your Automations
-
-Once you have set up a copy or counter trade, you may need to adjust or stop it.
-
-### `/list-copy`
-View all wallets you are currently copying or countering. This shows your active automated setups and their performance.
-
-### `/stop-copy`
-Stop copying a specific wallet. The bot will instantly stop opening new positions based on that user's activity.
+**How to Manage:**
+* Type `/counter` again to view your active "inverse" setups.
+* Use the menu to monitor performance or stop counter-trading a specific wallet.
