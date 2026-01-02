@@ -1,13 +1,12 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "linden",
+  "theme": "aspen",
   "name": "Samosa",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#4453ff",
+    "light": "#f236ff",
+    "dark": "#000000"
   },
-  "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
@@ -31,10 +30,6 @@
         ]
       }
     ]
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [
@@ -65,5 +60,6 @@
     "socials": {
       "x": "https://x.com/trysamosa"
     }
-  }
+  },
+  "description": "The Social Layer for Perps, Spot and Analytics"
 }
