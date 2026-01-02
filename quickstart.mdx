@@ -1,67 +1,70 @@
 ---
-title: 'Commands'
-description: 'Complete list of commands for the Decibel Telegram Bot.'
-icon: 'robot'
+title: 'Command Reference'
+description: 'Complete list of commands to interact with the Decibel Telegram Bot'
+icon : 'robot'
 ---
 
-<Warning>
-  **Aptos Testnet Alpha**
-  
-  Decibel is currently live on the Aptos Testnet. You do not need real funds to trade.
-  
-  **`/mint`**
-  Get started instantly by minting **$10,000 in Testnet USDC** directly to your trading wallet. Use this balance to test strategies risk-free.
-</Warning>
+# Bot Commands
 
-## Market Intelligence
-Tools to analyze price action and track specific assets before you trade.
+Control every aspect of your trading directly from Telegram. Below is the complete list of available commands for the Decibel Perp Bot.
 
-| Command | Description | Example |
-| :--- | :--- | :--- |
-| **/markets** | Displays a dashboard of all listed trading pairs on Decibel (e.g., APT-USD, BTC-USD). Shows live prices, 24h volume, and daily percentage changes. | `/markets` |
-| **/chart** | Generates a real-time candlestick chart for the requested asset inside Telegram. Toggle timeframes (15m, 1H, 4H) to analyze trends. | `/chart APT` |
-| **/watchlist** | Displays your saved list of favorite **Token Pairs**. Use this to filter out noise and only view prices for the assets you actively trade. | `/watchlist` |
-| **/alert** | Sets a custom price alert. The bot will DM you immediately when the token hits your target price. | `/alert ETH 2800` |
+## Getting Started
 
-## Trading Execution
-Core commands for executing, managing, and closing your positions.
+> **Note:** Decibel is currently on **Aptos testnet**. 
 
-| Command | Description | Example |
-| :--- | :--- | :--- |
-| **/limit** | Opens the Limit Order interface. Allows you to set precise entry prices to buy (Long) or sell (Short) at a specific level. | `/limit BTC 65000` |
-| **/positions** | Fetches a summary of all your currently active positions. View your entry price, liquidation price, and real-time PnL (ROI%). | `/positions` |
-| **/close** | The quick-exit tool. Brings up a menu to close specific positions, or options to close all at market price. | `/close SOL` |
-| **/orders** | Manages your "Open Book." View all pending limit orders or triggered stop orders. Cancel specific orders or wipe the book. | `/orders` |
+### `/mint`
+To begin trading, you will need testnet funds. Use this command to mint testnet USDC directly to your trading wallet. 
+* **Reward:** Receive **$10,000** in testnet USDC per mint to practice your strategies risk-free.
 
-## Risk Management
-Protect your capital and automate your exits.
+---
 
-| Command | Description | Example |
-| :--- | :--- | :--- |
-| **/tp** | Adds or edits a **Take Profit** trigger on an open position. You can set this by price target or by percentage gain. | `/tp ETH 3500` |
-| **/sl** | Adds or edits a **Stop Loss** trigger. Automatically closes your trade if the price moves against you to prevent liquidation. | `/sl APT 8.50` |
+## Trading & Management
+
+### `/markets`
+View the pulse of the market instantly. Get a snapshot of all listed pairs on Aptos, including real-time prices, 24h percentage changes, and current funding rates to spot opportunities.
+
+### `/limit`
+Execute with precision. Set limit orders to open long or short positions at specific price points. This allows you to catch wicks and enter trades exactly where you planned without staring at the screen.
+
+### `/positions`
+Your mission control. Monitor all your active trades in one view, including live PnL, entry price, liquidation price, and current leverage. Use this to track performance and manage risk at a glance.
+
+### `/close`
+Secure profits or cut losses instantly. This command brings up a menu to close specific positions or all active trades at market price. You can also select to close partial amounts (e.g., 50%) of a position.
+
+### `/orders`
+Manage your order book. View a list of all your pending limit and trigger orders. Use this to cancel outdated setups or modify open orders to align with your current market outlook.
+
+### `/tp`
+Lock in gains automatically. Set a **Take Profit** trigger for an open position. When the market hits your target price, the bot will automatically close the trade to secure your profit.
+
+### `/sl`
+Protect your capital. Set a **Stop Loss** trigger to automatically close your position if the market moves against you. This is an essential tool for disciplined risk management and capital preservation.
+
+### `/chart`
+Visualize price action without leaving the chat. Generates an instant candlestick chart for any requested pair, complete with customizable timeframes and key indicators to analyze trends on the fly.
+
+### `/settings`
+Customize your trading engine. Adjust your default leverage, slippage tolerance, gas presets, and notification preferences to tailor the Decibel bot to your specific trading style.
+
+---
 
 ## Social & PVP
-Features for tracking other traders, joining teams, and competitive interaction.
 
-| Command | Description | Example |
-| :--- | :--- | :--- |
-| **/track** | Adds a specific trader's wallet address to your personal tracking list. Receive notifications on their activity. | `/track 0x123...abc` |
-| **/untrack** | Removes a wallet from your tracking list. Stops the bot from sending notifications for that user. | `/untrack 0x123...abc` |
-| **/guild** | Opens the Guild interface. Create your own trading team, join an existing guild, or view the leaderboard. | `/guild` |
-| **/taunt** | Sends a playful or competitive message to another user. Best used after you win a trade against them. | `/taunt @username` |
+### `/track`
+Spy on the whales and top traders. Enter a wallet address to receive real-time notifications whenever that trader opens or closes a position, allowing you to copy-trade or counter-trade their moves.
 
-## System & Settings
+### `/untrack`
+Refine your signal feed. Stop following specific wallets or traders that you previously tracked. Use this to clear the noise and focus only on the most profitable wallets in your feed.
 
-| Command | Description | Example |
-| :--- | :--- | :--- |
-| **/settings** | Access the global bot configuration. Adjust your default leverage, gas fee preset, and "One-Click Trading" mode. | `/settings` |
-| **/wallet** | Checks your Aptos wallet balance and connects/disconnects your address. Shows available collateral. | `/wallet` |
+### `/alert`
+Never miss a move. Set custom price alerts for any asset. The bot will send you a direct message immediately when your target price is hit, so you can react to volatility instantly.
 
-## Automated Strategy Commands
-*These commands enable advanced automated trading strategies. Please refer to their specific documentation pages for detailed setup instructions.*
+### `/watchlist`
+Your personalized market view. Curate a favorites list of tokens to monitor closely. This gives you quick access to prices and stats for your preferred assets without searching the full market list.
 
-| Command | Description | Example |
-| :--- | :--- | :--- |
-| **/copytrade** | **Follow the Winners.** Automatically mirrors the trades of a specific wallet using fixed or proportional sizing. | `/copytrade 0xABC...123` |
-| **/countertrade** | **Fade the Losers.** The inverse of copy trading. Automatically opens the *exact opposite* position of the target wallet. | `/countertrade 0xXYZ...789` |
+### `/taunt`
+Flex on the competition. Send a playful, broadcasted message to the feed or a specific user after a successful trade or liquidation. This adds a social, competitive PVP layer to the trading experience.
+
+### `/guild`
+Strength in numbers. Create, join, or manage a trading guild. Pool your trading volume with friends to compete in team leaderboards, unlock collective rewards, and dominate the Decibel arena.
