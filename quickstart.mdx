@@ -1,65 +1,75 @@
 ---
-title: 'Commands'
+title: 'Command Reference'
 description: 'Complete list of commands to interact with the Decibel Telegram Bot'
 icon : 'robot'
 ---
 
+# Bot Commands
+
+Control your trades directly from Telegram. Below is the list of commands you can use with the Decibel Perp Bot.
+
 ## Getting Started
 
-> **Note:** Decibel is currently on **Aptos testnet**. 
+> **Note:** Decibel is currently on **Aptos testnet**.
 
 ### `/mint`
-To begin trading, you will need testnet funds. Use this command to mint testnet USDC directly to your trading wallet. 
+Use this command to get free test funds to start trading. Since we are on the Aptos testnet, you will receive **$10,000 in testnet USDC** to practice with risk-free.
 
 ---
 
 ## Trading & Management
 
+### `/long`
+Open a long position immediately at the current market price. Use this if you believe the token's price will **go up**.
+
+### `/short`
+Open a short position immediately at the current market price. Use this if you believe the token's price will **go down**.
+
 ### `/markets`
-View the pulse of the market instantly. Get a snapshot of all listed pairs on Aptos, including real-time prices, 24h percentage changes, and current funding rates to spot opportunities.
+Check the live status of the market. This shows you a list of all available tokens, their current prices, and how much they have changed in the last 24 hours.
 
 ### `/limit`
-Execute with precision. Set limit orders to open long or short positions at specific price points. This allows you to catch wicks and enter trades exactly where you planned without staring at the screen.
+Set an order to buy or sell at a specific price. Your trade will not open until the market hits the exact price you chose.
 
 ### `/positions`
-Your mission control. Monitor all your active trades in one view, including live PnL, entry price, liquidation price, and current leverage. Use this to track performance and manage risk at a glance.
+View all your active trades in one place. You can see your profit or loss, your entry price, and how close you are to liquidation.
 
 ### `/close`
-Secure profits or cut losses instantly. This command brings up a menu to close specific positions or all active trades at market price. You can also select to close partial amounts (e.g., 50%) of a position.
+Close your active trades immediately to take profit or stop a loss. You can choose to close a specific trade or all of them at once.
 
 ### `/orders`
-Manage your order book. View a list of all your pending limit and trigger orders. Use this to cancel outdated setups or modify open orders to align with your current market outlook.
+View a list of your waiting orders (like limit orders). Use this to see what is pending or to cancel an order you don't want anymore.
 
 ### `/tp`
-Lock in gains automatically. Set a **Take Profit** trigger for an open position. When the market hits your target price, the bot will automatically close the trade to secure your profit.
+Set a "Take Profit" price. The bot will automatically close your trade when the price hits this target to secure your winnings.
 
 ### `/sl`
-Protect your capital. Set a **Stop Loss** trigger to automatically close your position if the market moves against you. This is an essential tool for disciplined risk management and capital preservation.
+Set a "Stop Loss" price. The bot will automatically close your trade if the price goes against you to prevent you from losing too much money.
 
 ### `/chart`
-Visualize price action without leaving the chat. Generates an instant candlestick chart for any requested pair, complete with customizable timeframes and key indicators to analyze trends on the fly.
+Get a price chart sent directly to the chat. You can select different tokens and timeframes to see how the price is moving.
 
 ### `/settings`
-Customize your trading engine. Adjust your default leverage, slippage tolerance, gas presets, and notification preferences to tailor the Decibel bot to your specific trading style.
+Change your personal preferences. Use this to adjust your default leverage, notifications, and other trading options to fit your style.
 
 ---
 
 ## Social & PVP
 
 ### `/track`
-Spy on the whales and top traders. Enter a wallet address to receive real-time notifications whenever that trader opens or closes a position, allowing you to copy-trade or counter-trade their moves.
+Follow another trader's wallet address. The bot will send you a message whenever that person opens or closes a trade so you can see their moves.
 
 ### `/untrack`
-Refine your signal feed. Stop following specific wallets or traders that you previously tracked. Use this to clear the noise and focus only on the most profitable wallets in your feed.
+Stop following a wallet. Use this command if you no longer want to receive notifications about a specific trader's activity.
 
 ### `/alert`
-Never miss a move. Set custom price alerts for any asset. The bot will send you a direct message immediately when your target price is hit, so you can react to volatility instantly.
+Set a custom price alarm. The bot will verify the price and send you a direct message as soon as a token hits the number you selected.
 
 ### `/watchlist`
-Your personalized market view. Curate a favorites list of tokens to monitor closely. This gives you quick access to prices and stats for your preferred assets without searching the full market list.
+Create a list of your favorite tokens. This helps you quickly check prices for the coins you trade most often without searching through the full list.
 
 ### `/taunt`
-Flex on the competition. Send a playful, broadcasted message to the feed or a specific user after a successful trade or liquidation. This adds a social, competitive PVP layer to the trading experience.
+Send a fun public message to celebrate a big win or tease other traders. This adds a competitive game-like feel to the group.
 
 ### `/guild`
-Strength in numbers. Create, join, or manage a trading guild. Pool your trading volume with friends to compete in team leaderboards, unlock collective rewards, and dominate the Decibel arena.
+Create or join a team of traders. You can group up with friends to compete for higher rankings and win team rewards.
