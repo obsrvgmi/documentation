@@ -1,0 +1,30 @@
+---
+title: 'Copy & Counter Trading'
+description: 'Copytrade or COuntertrade your friends easily on Samosa'
+---
+
+## Commands
+
+### `/copy`
+Mirror the moves of a winning trader.
+When you use this command with a wallet address, the bot will automatically open the exact same trades as that user—buying when they buy and selling when they sell.
+* **Usage:** `/copy [Wallet Address] [Amount]`
+* **Best for:** Following "Whales" or top-ranked leaderboard players.
+
+### `/counter`
+Bet against a specific trader.
+If the target trader opens a Long position, your bot will automatically open a Short. If they Short, you Long. This is a powerful tool if you identify a trader who is consistently wrong.
+* **Usage:** `/counter [Wallet Address] [Amount]`
+* **Best for:** Profiting from "inverse" signals or betting against rivals.
+
+---
+
+## Managing Your Automations
+
+Once you have set up a copy or counter trade, you may need to adjust or stop it.
+
+### `/list-copy`
+View all wallets you are currently copying or countering. This shows your active automated setups and their performance.
+
+### `/stop-copy`
+Stop copying a specific wallet. The bot will instantly stop opening new positions based on that user's activity.
